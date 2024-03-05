@@ -6,12 +6,12 @@
 /*   By: jponieck <jponieck@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 22:33:25 by jponieck          #+#    #+#             */
-/*   Updated: 2024/03/05 17:30:41 by jponieck         ###   ########.fr       */
+/*   Updated: 2024/03/05 18:06:02 by jponieck         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUFFER_SIZE
-#define BUFFER_SIZE 4
+#define BUFFER_SIZE 5
 #endif
 
 #ifndef GET_NEXT_LINE_H
