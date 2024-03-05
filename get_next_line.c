@@ -9,7 +9,7 @@
 /*   Updated: 2024/03/05 18:10:04 by jponieck         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include <string.h>
 #include "get_next_line.h"
 
 char *get_next_line(int fd)
@@ -17,6 +17,7 @@ char *get_next_line(int fd)
 	char	*buffer;
 
 	buffer = malloc(BUFFER_SIZE);
+	memset(buffer,2 ,BUFFER_SIZE);
 	if (!buffer)
 		return (NULL);
 	if (read_next_part(buffer, fd) != 0)

@@ -12,11 +12,23 @@
 
 #include "get_next_line.h"
 
+static int	search_end_file(char *buffer, int i)
+{
+	static int	end;
+
+	if (end == 0)
+	{
+		end = 1;
+		buffer[i] = 0;
+		return (1);
+	}
+	else
+		return(0);
+}
+
 int	read_next_part(char *buffer, int fd)
 {
-	// static size_t	p;
 	// size_t		i
-	// static int	p;
 	int			i;
 	int			check;
 	char		c;
@@ -26,7 +38,7 @@ int	read_next_part(char *buffer, int fd)
 	{
 		check = read(fd, &c, 1);
 		if (!check)
-			return (0);
+			return (search_end_file(buffer, i));
 		buffer[i] = c;
 		if (c == '\n')
 		{
@@ -36,7 +48,6 @@ int	read_next_part(char *buffer, int fd)
 			return(1);
 		}
 		i++;
-		// p++;
 	}
 	return (0);
 }
