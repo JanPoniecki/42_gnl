@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jponieck <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jponieck <jponieck@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 22:33:25 by jponieck          #+#    #+#             */
-/*   Updated: 2024/03/03 22:33:28 by jponieck         ###   ########.fr       */
+/*   Updated: 2024/03/05 17:30:41 by jponieck         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUFFER_SIZE
-#define BUFFER_SIZE 1000
+#define BUFFER_SIZE 4
 #endif
 
 #ifndef GET_NEXT_LINE_H
