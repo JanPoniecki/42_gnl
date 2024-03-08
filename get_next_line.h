@@ -6,7 +6,7 @@
 /*   By: jponieck <jponieck@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 22:33:25 by jponieck          #+#    #+#             */
-/*   Updated: 2024/03/05 18:06:02 by jponieck         ###   ########.fr       */
+/*   Updated: 2024/03/08 13:47:53 by jponieck         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 #include <stdio.h>
 
 char	*get_next_line(int fd);
+char	*read_buffer(char *buffer);
 int		read_next_part(char *buffer, int fd);
 
 #endif

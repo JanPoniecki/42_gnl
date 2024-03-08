@@ -6,7 +6,7 @@
 /*   By: jponieck <jponieck@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 22:33:08 by jponieck          #+#    #+#             */
-/*   Updated: 2024/03/05 17:29:42 by jponieck         ###   ########.fr       */
+/*   Updated: 2024/03/08 15:37:14 by jponieck         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	read_next_part(char *buffer, int fd)
 	char		c;
 
 	i = 0;
+	c = 0;
 	while (i < BUFFER_SIZE)
 	{
 		check = read(fd, &c, 1);
@@ -51,3 +52,37 @@ int	read_next_part(char *buffer, int fd)
 	}
 	return (0);
 }
+
+static char	*copy_line(int start, int stop, char *buffer)
+{
+	char	*line;
+	int		i;
+
+	i = 0;
+	line = malloc(sizeof(char) * (stop - start + 2));
+	if (!line)
+		return (NULL);
+	while (start <= stop)
+		line[i++] = buffer[start++];
+	line[i] = 0;
+	return (line);
+}
+
+char	*read_buffer(char *buffer)
+{
+	static int	start;
+	static int	stop;
+	char		*line;
+
+	while (stop < BUFFER_SIZE)
+	{
+		if (buffer[stop++] == '\n')
+			break ;
+	}
+	if (buffer[stop - 1] == '\n')
+		line = copy_line(start, stop, buffer);
+	return (line);
+}
+
+
+

@@ -16,18 +16,9 @@ int main()
 	int	i = 0;
 
 	fd = open("test.txt", O_RDONLY);
-	// fd = 1;
-	while (i++ < 100)
-	{
-		char *line = get_next_line(fd);
-		if (!line)
-		{
-			break ;
-		}
-		print_mem(line, 20);
-		printf("%li - %s", strlen(line), line);
-		free(line);
-		printf("-----------------------------------------\n");
-	}
+	char *line = get_next_line(fd);
+	printf("%li - %s", strlen(line), line);
+	free(line);
+	printf("-----------------------------------------\n");
 	close(fd);
 }
